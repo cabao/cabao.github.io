@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function f()
+        {
+            var sex = document.getElementById("S").value;
+            var height = document.getElementById("H").value;
+            var weight = document.getElementById("W").value;
+            var BMI = weight / ((height / 100) * (height / 100));
+            var toNormal;
+            if (BMI < 18.5)
+            {
+                alert("體重過輕");
+                toNormal = (18.5 - BMI) * height * height;
+                if (sex == "female")
+                    document.getElementById("pic").innerHTML = "<img src='http://www.wanhuajing.com/pic/1510/2817/531836/1_499_368.jpg' width = '90%'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://imgapi.nownews.com/?w=640&q=80&src=http%3A%2F%2Fs.nownews.com%2F2c%2F5a%2F2c5a8968090c088fa8e3ab2ae9b008a6.jpg' width = '90%'>";
+                document.getElementById("calculate_KG").innerHTML = "toNormal";
+            }
+            else if (BMI >= 18.5 && BMI < 24)
+            {
+                alert("健康體重");
+                if (sex == "female")
+                    document.getElementById("pic").innerHTML = "<img src='http://josei-bigaku.jp/wp/wp-content/uploads/2013/10/8af9920067986l.jpg'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://gb.cri.cn/mmsource/images/2007/06/07/wd070607004.jpg'>";
+
+            }
+            else if (BMI >= 24 && BMI < 27)
+            {
+                alert("體重過重");
+                if (sex == "female")
+                    document.getElementById("pic").innerHTML = "<img src='http://twimg.edgesuite.net//images/twapple/640pix/20120711/LN10/LN10_002.jpg' width = '80%'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://vpic.video.qq.com/34700329/u0015d3xltq_ori_3.jpg' width = '80%'>";
+
+            }
+            else
+            {
+
+                alert("肥胖");
+                if (sex == "female")
+                    document.getElementById("pic").innerHTML = "<img src='https://top1health.blob.core.windows.net/cdn/am/15011/39829.jpg'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://times-bignews.com/UploadFiles/201506/20150609144017a.jpg'>";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<form id="frm1" action="javascript:f();">
+身高 : <input id="H" type="text" value=""><br>
+體重 : <input id="W" type="text" value=""><br>
+性別 :
+<select id = "S">
+  <option value="male">男</option>
+  <option value="female">女</option>
+</select>
+<br>
+<input type="submit" value="Submit">
+</form>
+<div id = "pic"></div>
+<div id = "calculate_KG"></div>
+</body>
+</html>

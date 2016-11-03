@@ -8,7 +8,54 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+      <script>
+        function f()
+        {
+            var isMale = document.getElementById("male").checked;
+            var height = document.getElementById("H").value;
+            var weight = document.getElementById("W").value;
+            var BMI = weight / ((height / 100) * (height / 100));
+            var toNormal;
+            if (BMI < 18.5)
+            {
+                alert("體重過輕");
+                toNormal = (18.5 - BMI) * (height/100) * (height/100);
+                if (isMale)
+                    document.getElementById("pic").innerHTML = "<img src='http://imgapi.nownews.com/?w=640&q=80&src=http%3A%2F%2Fs.nownews.com%2F2c%2F5a%2F2c5a8968090c088fa8e3ab2ae9b008a6.jpg' width = '90%'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://www.wanhuajing.com/pic/1510/2817/531836/1_499_368.jpg' width = '90%'>";
+                document.getElementById("calculate_KG").innerHTML = "到達健康體重需增 ： "+Math.round(toNormal*10)/10+" KG";
+            }
+            else if (BMI >= 18.5 && BMI < 24)
+            {
+                alert("健康體重");
+                if (isMale)
+                    document.getElementById("pic").innerHTML = "<img src='http://gb.cri.cn/mmsource/images/2007/06/07/wd070607004.jpg'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://josei-bigaku.jp/wp/wp-content/uploads/2013/10/8af9920067986l.jpg'>";
+            }
+            else if (BMI >= 24 && BMI < 27)
+            {
+                alert("體重過重");
+                toNormal = (BMI - 24) * (height/100) * (height/100);
+                if (isMale)
+                    document.getElementById("pic").innerHTML = "<img src='http://vpic.video.qq.com/34700329/u0015d3xltq_ori_3.jpg' width = '80%'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='http://twimg.edgesuite.net//images/twapple/640pix/20120711/LN10/LN10_002.jpg' width = '80%'>";
+                document.getElementById("calculate_KG").innerHTML = "到達健康體重需減 ： "+Math.round(toNormal*10)/10+" KG";
+            }
+            else
+            {
+                alert("肥胖");
+                toNormal = (BMI - 24) * (height/100) * (height/100);
+                if (isMale)
+                    document.getElementById("pic").innerHTML = "<img src='http://times-bignews.com/UploadFiles/201506/20150609144017a.jpg'>";
+                else
+                    document.getElementById("pic").innerHTML = "<img src='https://top1health.blob.core.windows.net/cdn/am/15011/39829.jpg'>";
+                document.getElementById("calculate_KG").innerHTML = "到達健康體重需減 ： "+Math.round(toNormal*10)/10+" KG";
+            }
+        }
+      </script>
 
 
 
@@ -21,8 +68,35 @@
       <div class="card-panel deep-orange lighten-1">
         <span class="cyan-text text-darken-4"><h5>The BMI Calculator</h5></span>
       </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-        <i class="material-icons right">send</i>
-      </button>
+
+
+      <div class="container">
+          <!-- Page Content goes here -->
+        <p>
+          <input name="group1" type="radio" id="male" checked />
+          <label for="male">男</label>
+        </p>
+        <p>
+          <input name="group1" type="radio" id="female" />
+          <label for="female">女</label>
+        </p>
+
+        <p class="range-field">
+          身高(cm)：<input type="range" id="H" min="80" max="220" />
+        </p>
+        <p class="range-field">
+          體重(kg)：<input type="range" id="W" min="20" max="200" />
+        </p>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action" onclick="javascript:f();">Submit
+          <i class="material-icons right">send</i>
+        </button>
+        <div id = "pic"></div>
+        <div id = "calculate_KG"></div>
+      </div>
+
+
+
+
     </body>
   </html>

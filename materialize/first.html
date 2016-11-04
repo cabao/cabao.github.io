@@ -21,44 +21,47 @@
                 alert("體重過輕");
                 toNormal = (18.5 - BMI) * (height/100) * (height/100);
                 if (isMale)
-                    document.getElementById("pic").innerHTML = "<img src='http://imgapi.nownews.com/?w=640&q=80&src=http%3A%2F%2Fs.nownews.com%2F2c%2F5a%2F2c5a8968090c088fa8e3ab2ae9b008a6.jpg' width = '90%'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://imgapi.nownews.com/?w=640&q=80&src=http%3A%2F%2Fs.nownews.com%2F2c%2F5a%2F2c5a8968090c088fa8e3ab2ae9b008a6.jpg' width = '90%'>";
                 else
-                    document.getElementById("pic").innerHTML = "<img src='http://www.wanhuajing.com/pic/1510/2817/531836/1_499_368.jpg' width = '90%'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://www.wanhuajing.com/pic/1510/2817/531836/1_499_368.jpg' width = '90%'>";
                 document.getElementById("calculate_KG").innerHTML = "到達健康體重需增 ： "+Math.round(toNormal*10)/10+" KG";
+                document.getElementById("Card-cont").innerHTML =  "<p>當BMI < 18.5時，判斷為『過輕』體位，體重過輕的危害主要包括呼吸方面的疾病、肺結核、消化性疾病和部分的癌症。除此之外，體重過輕的婦女可能變為不孕，而如果懷孕了，胎兒不健康的機率也較高。<br>體重過輕也常伴隨營養不足的危害。由於營養素、熱量的不足，導致身體許多的代謝和生理活動無法正常運作。在此情況下，身體沒有多餘的貯存，一旦有手術、消耗性疾病，如癌症、AIDS時，將會更為嚴重。<a href = 'http://xz48899959.pixnet.net/blog/post/222644081-%E5%A4%AA%E7%98%A6%E6%88%96%E9%AB%94%E9%87%8D%E9%81%8E%E8%BC%95%E4%B9%9F%E4%B8%8D%E8%A6%8B%E5%BE%97%E5%A5%BD' target='_blank'>To see more...</></p>";
             }
             else if (BMI >= 18.5 && BMI < 24)
             {
                 alert("健康體重");
                 if (isMale)
-                    document.getElementById("pic").innerHTML = "<img src='http://gb.cri.cn/mmsource/images/2007/06/07/wd070607004.jpg'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://gb.cri.cn/mmsource/images/2007/06/07/wd070607004.jpg'>";
                 else
-                    document.getElementById("pic").innerHTML = "<img src='http://josei-bigaku.jp/wp/wp-content/uploads/2013/10/8af9920067986l.jpg'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://josei-bigaku.jp/wp/wp-content/uploads/2013/10/8af9920067986l.jpg'>";
+                document.getElementById("Card-cont").innerHTML =  "<p>當BMI介於 18.5 到 24 之間時，為『健康』體位。<br> 繼續保持！</p>";
             }
             else if (BMI >= 24 && BMI < 27)
             {
                 alert("體重過重");
                 toNormal = (BMI - 24) * (height/100) * (height/100);
                 if (isMale)
-                    document.getElementById("pic").innerHTML = "<img src='http://vpic.video.qq.com/34700329/u0015d3xltq_ori_3.jpg' width = '80%'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://vpic.video.qq.com/34700329/u0015d3xltq_ori_3.jpg' width = '80%'>";
                 else
-                    document.getElementById("pic").innerHTML = "<img src='http://twimg.edgesuite.net//images/twapple/640pix/20120711/LN10/LN10_002.jpg' width = '80%'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://twimg.edgesuite.net//images/twapple/640pix/20120711/LN10/LN10_002.jpg' width = '80%'>";
                 document.getElementById("calculate_KG").innerHTML = "到達健康體重需減 ： "+Math.round(toNormal*10)/10+" KG";
+                document.getElementById("Card-cont").innerHTML =  "<p>當BMI 介於 24 到 27 之間時，判斷為『過胖』體位。體重過重和肥胖對兒童的心理和生理健康方面都有重要的影響。例如，過重和肥胖的兒童容易罹患糖尿病、高血壓、高血脂等疾病。此外，在心理健康方面，肥胖兒童更容易得憂鬱症。<br>過重與肥胖兒童在未來的40或50年時間內更容易患心血管和消化方面的疾病，且相對於正常體重的人，死亡率更高。<a href='http://www.hhre.org.tw/eating.html' target='_blank'>To see more...</p>";
             }
             else
             {
                 alert("肥胖");
                 toNormal = (BMI - 24) * (height/100) * (height/100);
                 if (isMale)
-                    document.getElementById("pic").innerHTML = "<img src='http://times-bignews.com/UploadFiles/201506/20150609144017a.jpg'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='http://times-bignews.com/UploadFiles/201506/20150609144017a.jpg'>";
                 else
-                    document.getElementById("pic").innerHTML = "<img src='https://top1health.blob.core.windows.net/cdn/am/15011/39829.jpg'>";
+                    document.getElementById("Card-img").innerHTML = "<img src='https://top1health.blob.core.windows.net/cdn/am/15011/39829.jpg'>";
                 document.getElementById("calculate_KG").innerHTML = "到達健康體重需減 ： "+Math.round(toNormal*10)/10+" KG";
+                document.getElementById("Card-cont").innerHTML =  "<p>當BMI >= 27時，判斷為『肥胖』體位，肥胖引起的疾病除了三高、心臟病、腦血管疾病，還會引起痛風、退化性關節炎、脂肪肝、膽結石、胃食道逆流、不孕症…等等許多慢性病，甚至包含大腸直腸癌、乳癌、食道癌、攝護腺癌…等許多癌症也和肥胖相關。<br>事實上， 2012 年國人十大死因中，包括惡性腫瘤、心臟疾病、腦血管疾病、糖尿病、高血壓性疾病、腎病變等六項與肥胖高度相關。而肥胖引起的睡眠呼吸中止症會造成睡眠時常打呼、睡眠品質不佳、白天容易打瞌睡，長久影響除了引起高血壓、心臟病以外，更常導致車禍等事故傷亡。近年在亞洲的跨國大行研究也發現，身體質量指數到達中度肥胖以上，死亡率會顯著上升。<a href='http://www.kmuh.org.tw/www/kmcj/data/10305/12.htm' target='_blank'>To see more...</></p>";
             }
 	      		document.getElementById("cal_KG").style.display = "block";
+	      		document.getElementById("frame").style.display = "block";
         }
       </script>
-
-
 
     </head>
 
@@ -93,40 +96,26 @@
           <i class="material-icons right">send</i>
         </button>
         <div class="row" style="display:none" id = "cal_KG">
-          <div class="col m6 l5"><p></p></div>
+          <div class="col m6 l4"><p></p></div>
           <div class="col s12 m6 l4 card-panel blue lighten-4" style="font-size: 130%" id = "calculate_KG"></div>
         </div>
 
-        <div class="row">
+        <div class="row" style="display:none" id = "frame">
           <div class="col m3 l3"></div>
           <div class="col s12 m7 l6">
-            <div class="card">
-              <div class="card-image">
-                <img src="images/sample-1.jpg">
+            <div class="card" id ="Card">
+              <div class="card-image" id = "Card-img">
                 <span class="card-title">Card Title</span>
               </div>
-              <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+              <div class="card-content" id = "Card-cont">
               </div>
               <div class="card-action">
-                <a href="#">This is a link</a>
+                <a href="http://obesity.hpa.gov.tw/TC/index.aspx" target="_blank">Visit 國民健康署-肥胖防治網</a>
               </div>
             </div>
           </div>
         </div>
-
-
-
-
-
       </div>
-
-
-
-
-        <div id = "pic"></div>
-
 
     </body>
   </html>

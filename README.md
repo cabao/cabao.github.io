@@ -1,3 +1,3 @@
 # cabao.github.io
-The GitHub Pages Repo  
-:octocat: Under consruct :camel:
+The GitHub Pages Repo :octocat:  
+:camel: Under consruct :camel:

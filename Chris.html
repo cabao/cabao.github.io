@@ -20,8 +20,6 @@
 　 ,·´ ¸,·´`)
 　(¸,·´　(¸＊♥Marry Christmas & Mama love Baobao
 　　　　　　　　　　 ♥
-
-
     -->
     <meta charset="utf-8">
     <title>Merry Christmas to Bao Bao </title>
@@ -32,7 +30,7 @@
     <!-- 最新編譯和最佳化的 JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-    <script src="md5.js"></script>
+    <script src="encrypt.js"></script>
   <style>
         html {
             height: 100%;
@@ -76,7 +74,7 @@
         var ch = md5(x);
         if (key === ch)
         {
-          alert("Welcome");
+          alert("Bingo !");
           window.open("lafulafu.html");
         }
         else

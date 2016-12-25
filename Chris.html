@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!---
+
+　＊　'　*　.★　＊　　'＊　　　*
+＊　　.　'　　☆ 　　　 ' 　＊
+.　　　＊　　☆☆☆　＊　Merry '　　.
+　　*　　'　+:...+....:+　　Christmas
+'　　　　'　☆☆☆☆☆　　　＊　'　　
+　＊　＊　+:...:+＠+:...:+ 　　　'　　*
+＊　.　　.☆☆☆☆☆☆☆☆ ＊　'　*　.
+　　.　　+:..:+&+:...:+:...:+
+　*　.　☆☆☆☆☆☆☆☆☆☆☆　＊　'　　　*
+'　.　　+:...:+♡+:...:+§+:..:+
+.　*　☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆　　'　*
+　　.+:..:+♡+:..:+@+:..:+♡+:..:+
+　.　　　　　.▨ 　 '　' ＊　　　　　*
+　　　.　*　　　　　　.　　　.　　'
+　 ,·´ ¸,·´`)
+　(¸,·´　(¸＊♥Marry Christmas &
+　　　　　　　　　　 ♥
+
+
+    -->
+    <meta charset="utf-8">
+    <title>Merry Christmas to Bao Bao </title>
+    <!-- 最新編譯和最佳化的 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- 選擇性佈景主題 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- 最新編譯和最佳化的 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="md5.js"></script>
+  <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-image: url(tree.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+/* 下雪OwO */
+.snowflake {
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Noto Sans TC';
+  text-shadow: 0 0 1px #000;
+}
+
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}
+@-webkit-keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}
+@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}
+.snowflake{position:fixed;top:-10%;z-index:9999;user-select:none;cursor:default;animation-name:snowflakes-fall,snowflakes-shake;animation-duration: 8s;animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55),ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running;}
+.snowflake:nth-of-type(0){left:1%;animation-delay:3s, 1.5s}
+.snowflake:nth-of-type(1){left:10%;animation-delay:3s, 5s}
+.snowflake:nth-of-type(2){left:20%;animation-delay:5.5s, 4s}
+.snowflake:nth-of-type(3){left:30%;animation-delay:1s, 3.5s}
+.snowflake:nth-of-type(4){left:40%;animation-delay:4.5s, 2s}
+.snowflake:nth-of-type(5){left:50%;animation-delay:4s, 2s}
+.snowflake:nth-of-type(6){left:60%;animation-delay:3s, 1s}
+.snowflake:nth-of-type(7){left:70%;animation-delay:2s, 4s}
+.snowflake:nth-of-type(8){left:80%;animation-delay:3s, 5.5s}
+.snowflake:nth-of-type(9){left:90%;animation-delay:4s, 1s}
+
+  </style>
+    <script type="text/javascript">
+      function check(){
+        var key = "e2c267d6b1d1b21330a18788e14cd3f0";
+        var x = $("div .row .col-md-3 #inputPassword").val();
+        var ch = md5(x);
+        if (key === ch)
+        {
+          alert("Welcome");
+          window.open("lafulafu.html");
+        }
+        else
+        {
+          alert("Wrong Password ! Try again ! ");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">✺</div>
+      <div class="snowflake">✺</div>
+      <div class="snowflake">❅</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">✺</div>
+      <div class="snowflake">❁</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❁</div>
+      <div class="snowflake">❄</div>
+      <div class="snowflake">❅</div>
+    </div>
+
+    <div class="container">
+      <form class=form-signin role=form >
+        <div class="row"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-5"></div>
+          <div class="col-md-3">
+            <label for=inputPassword class=sr-only>Password</label>
+            <input type=password id=inputPassword class=form-control placeholder=Password required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-6"></div>
+          <div class="col-md-2">
+            <button class="btn btn-lg btn-primary btn-block" type=submit onclick="javascript:check();">Ma Ma</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </body>
+</html>

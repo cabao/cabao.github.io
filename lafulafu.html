@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- 選擇性佈景主題 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <!-- 最新編譯和最佳化的 JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <style>
       body {
         background: linear-gradient(to top, #FFBD9D , #FF5809);
@@ -10,7 +16,11 @@
     </style>
   </head>
   <body>
-    <iframe id="ytplayer" type="text/html" width="1100" height="1000" src="https://www.youtube.com/embed/1Dy8PhLxkCg?autoplay=1" frameborder="0"></iframe>
+    <div class="container">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe id="ytplayer" type="text/html" class="embed-responsive-item" src="https://www.youtube.com/embed/1Dy8PhLxkCg?autoplay=1" frameborder="0"></iframe>
+      </div>
+    </div>
 
   </body>
 </html>

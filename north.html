@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cabao 帶你出去玩</title>
+    <title>Cabao 推薦-北部</title>
   <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -12,20 +12,53 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <link href="css/style.css" type="text/css" rel="stylesheet" >
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map, #pano {
+        float: left;
+        height: 100%;
+        width: 45%;
+      }
+    </style>
   </head>
 
-  <body>
+  <body class="travel-bg">
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="images/n-1.jpg"></div>
+    </div>
+    <div class="section white">
+      <div class="row container parallax-container">
+        <h2 class="header">宜蘭好去處-梅花湖</h2>
+        <div id="map" style="display:block"></div>
+        <div id="pano"></div>
+      </div>
+    </div>
+    <div class="parallax-container">
+      <div class="parallax"><img src="images/n-2.jpg"></div>
+    </div>
+
+
     <div class="navbar-fixed">
       <nav>
         <ul id="dropdown1" class="dropdown-content">
-          <li><a href="north.html">北部-宜蘭</a></li>
-          <li><a href="mid.html">中部-南投</a></li>
-          <li><a href="south.html">南部-高雄</a></li>
-
+          <li><a href="#!">北部-宜蘭</a></li>
+          <li><a href="#!">中部-南投</a></li>
+          <li><a href="#!">南部-高雄</a></li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
           <li><a href="where-are-you.html">Where are you ? </a></li>
-          <li><a href="around-you.html">Around you</a></li>
+          <li><a href="#!">Icon Design</a></li>
+          <li><a href="#!">Poster Design</a></li>
         </ul>
         <div class="nav-wrapper">
           <a href="index.html" class="left brand-logo hide-on-med-and-down">&nbspCabao 帶你出去玩</a>
@@ -35,32 +68,34 @@
           <ul class="right hide-on-med-and-down">
             <li><a a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdown1">Cabao推薦旅遊</a></li>
             <li><a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdown2">Services</a></li>
-            <li><a href="mailto:cabao@cabao.com.tw">Contact</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
             <li><a href="index.html" class="waves-effect waves-light btn yellow darken-2 grey-text text-darken-4 " >Home</a></li>
           </ul>
           <ul id="mobile-demo" class="side-nav">
             <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
-                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Cabao 推薦旅遊</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Dropdown 1</a>
                   <div class="collapsible-body">
                     <ul>
-                      <li><a href="north.html">北部-宜蘭</a></li>
-                      <li><a href="mid.html">中部-南投</a></li>
-                      <li><a href="south.html">南部-高雄</a></li>
+                      <li><a href="#">Link1</a></li>
+                      <li><a href="#">link2</a></li>
+                      <li><a href="#">link3</a></li>
                     </ul>
                   </div>
                 </li>
-                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Services</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Dropdown 2</a>
                   <div class="collapsible-body">
                     <ul>
-                      <li><a href="where-are-you.html">Where are you ? </a></li>
-                      <li><a href="around-you.html">Around you</a></li>
+                      <li><a href="#">link1</a></li>
+                      <li><a href="#">link2</a></li>
+                      <li><a href="#">link3</a></li>
                     </ul>
                   </div>
                 </li>
 
-                <li class="bold"><a href="mailto:cabao@cabao.com.tw" class="waves-effect waves-teal">Contact</a></li>
-                <li class="bold"><a href="index.html" class="waves-effect waves-teal">Home</a></li>
+                <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Normal link 1</a></li>
+                <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Normal link 2</a></li>
               </ul>
             </li>
           </ul>
@@ -72,27 +107,19 @@
     </script>
 
 
-    <div class="container">
-      <div class="row spacer"></div>
-      <div class="row center">
-        <a href="where-are-you.html" id="start-button" class="btn-large waves-effect waves-light">Get Started</a>
-      </div>
-    </div>
-
 
 
     <footer class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Thanks for watching ! </h5>
-            <p class="grey-text text-lighten-4">We'll do our best to enhance ! </p>
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="index.html">Home</a></li>
-              <li><a class="grey-text text-lighten-3" href="where-are-you.html">Where are you ?</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
 
             </ul>
           </div>
@@ -106,6 +133,29 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      function initialize() {
+        var fenway = {lat: 24.642687, lng:121.733190};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: fenway,
+          zoom: 17
+        });
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('pano'), {
+              position: fenway,
+              pov: {
+                heading: 318.35586118102003,
+                pitch: 	0.49426462461102005
+              }
+            });
+        map.setStreetView(panorama);
+      }
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?signed_in=true&callback=initialize">
+    </script>
 
   </body>
 </html>

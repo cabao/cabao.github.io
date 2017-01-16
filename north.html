@@ -52,7 +52,7 @@
 
           var vid = _url.match('[\\?&]v=([^&#]*)')[1];
 
-          var thumbUrl = "http://img.youtube.com/vi/"+vid+"/" + _type + ".jpg";
+          var thumbUrl = "https://img.youtube.com/vi/"+vid+"/" + _type + ".jpg";
 
           _this.html('<img src="'+thumbUrl+'" alt="'+_info+'" title="'+_info+'" width="'+imgWidth+'" height="'+imgHeight+'" />').click(function(){
             return false;
@@ -91,11 +91,11 @@
         function showYoutube(vid){
           // 當點擊到圖片時就轉換成 YouTube 影片
           var swf  = '<object width="'+swfWidth+'" height="'+swfHeight+'">';
-          swf += '<param name="movie" value="http://www.youtube.com/v/'+vid+autoPlay+fullScreen+'"></param>';
+          swf += '<param name="movie" value="https://www.youtube.com/v/'+vid+autoPlay+fullScreen+'"></param>';
           swf += '<param name="wmode" value="transparent"></param>';
           swf += (fullScreen == '&fs=1') ? '<param name="allowfullscreen" value="true"></param>' : '';
 
-          swf += '<embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/'+vid+autoPlay+fullScreen+'" ';
+          swf += '<embed type="application/x-shockwave-flash" src="https://www.youtube.com/v/'+vid+autoPlay+fullScreen+'" ';
           swf += (fullScreen == '&fs=1') ? 'allowfullscreen="true" ' : '';
           swf += 'wmode="transparent" width="'+swfWidth+'" height="'+swfHeight+'"></embed>';
 
@@ -195,10 +195,10 @@
         <div class="tv">
           <div class="video">
             <object width="480" height="360">
-              <param name="movie" value="http://www.youtube.com/v/htCW5fcyLUU&amp;autoplay=0&amp;fs=1">
+              <param name="movie" value="https://www.youtube.com/v/htCW5fcyLUU&amp;autoplay=0&amp;fs=1">
               <param name="wmode" value="transparent">
               <param name="allowfullscreen" value="true">
-              <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/htCW5fcyLUU&amp;autoplay=0&amp;fs=1" allowfullscreen="true" wmode="transparent" width="480" height="360"></object></div>
+              <embed type="application/x-shockwave-flash" src="https://www.youtube.com/v/htCW5fcyLUU&amp;autoplay=0&amp;fs=1" allowfullscreen="true" wmode="transparent" width="480" height="360"></object></div>
           <ul class="playlist">
             <li><a href="https://www.youtube.com/watch?v=xOh-PdkQqiA"></a></li>
             <li><a href="https://www.youtube.com/watch?v=puLNLTJ7mE0"></a></li>

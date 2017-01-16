@@ -29,79 +29,191 @@
         width: 45%;
       }
     </style>
+
+    <script type="text/javascript">
+      $(function(){
+        var thumbSize = 'large',
+          imgWidth = '120',
+          imgHeight = '90',
+          swfWidth = '480',
+          swfHeight = '360',
+          autoPlay = '&autoplay=0',
+          fullScreen = '&fs=1',
+          $video = $('.video'),
+          _videoOffset = $video.offset(),
+          _speed = 600;
+
+        var _first = true;
+
+        $('.playlist>li>a').each(function(){
+          var _this =  $(this),
+            _url = _this.attr('href'),
+            _info = _this.text(),
+            _type = (thumbSize == 'large') ? 0 : 2;
+
+          var vid = _url.match('[\\?&]v=([^&#]*)')[1];
+
+          var thumbUrl = "http://img.youtube.com/vi/"+vid+"/" + _type + ".jpg";
+
+          _this.html('<img src="'+thumbUrl+'" alt="'+_info+'" title="'+_info+'" width="'+imgWidth+'" height="'+imgHeight+'" />').click(function(){
+            return false;
+          }).focus(function(){
+            this.blur();
+          }).children('img').click(function(){
+            var $this = $(this),
+              _offset = $this.offset();
+
+            if(_first){
+              $video.html(showYoutube(vid));
+              return (_first = false);
+            }
+
+            var $clone = $this.clone().appendTo('body')
+            $clone.css({
+              position: 'absolute',
+              top: _offset.top,
+              left: _offset.left
+            }).animate({
+              left: _videoOffset.left,
+              top: _videoOffset.top,
+              width: $video.width(),
+              height: $video.height()
+            }, _speed, function(){
+              $video.html(showYoutube(vid));
+              $clone.fadeOut(function(){
+                $(this).remove();
+              });
+            });
+
+            return false;
+          });
+        });
+
+        function showYoutube(vid){
+          // 當點擊到圖片時就轉換成 YouTube 影片
+          var swf  = '<object width="'+swfWidth+'" height="'+swfHeight+'">';
+          swf += '<param name="movie" value="http://www.youtube.com/v/'+vid+autoPlay+fullScreen+'"></param>';
+          swf += '<param name="wmode" value="transparent"></param>';
+          swf += (fullScreen == '&fs=1') ? '<param name="allowfullscreen" value="true"></param>' : '';
+
+          swf += '<embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/'+vid+autoPlay+fullScreen+'" ';
+          swf += (fullScreen == '&fs=1') ? 'allowfullscreen="true" ' : '';
+          swf += 'wmode="transparent" width="'+swfWidth+'" height="'+swfHeight+'"></embed>';
+
+          swf += '</object/>';
+
+          return swf;
+        }
+
+        // 先載入第一個影片
+        $('.playlist>li>a').eq(0).children('img').click();
+
+        // 變更影片播放為自動播放
+        autoPlay = '&autoplay=1';
+      });
+    </script>
+
   </head>
 
   <body class="travel-bg">
 
-    <div class="parallax-container">
-      <div class="parallax"><img src="images/s-1.jpg"></div>
-    </div>
-    <div class="section white">
-      <div class="row container parallax-container">
-        <h2 class="header">高雄好去處-愛河</h2>
-        <div id="map" style="display:block"></div>
-        <div id="pano"></div>
-      </div>
-    </div>
-    <div class="parallax-container">
-      <div class="parallax"><img src="images/s-2.jpg"></div>
-    </div>
-
-
     <div class="navbar-fixed">
       <nav>
         <ul id="dropdown1" class="dropdown-content">
-          <li><a href="#!">北部-宜蘭</a></li>
-          <li><a href="#!">中部-南投</a></li>
-          <li><a href="#!">南部-高雄</a></li>
+          <li><a href="north.html">北部-宜蘭</a></li>
+          <li><a href="mid.html">中部-南投</a></li>
+          <li><a href="south.html">南部-高雄</a></li>
+
         </ul>
         <ul id="dropdown2" class="dropdown-content">
           <li><a href="where-are-you.html">Where are you ? </a></li>
-          <li><a href="#!">Icon Design</a></li>
-          <li><a href="#!">Poster Design</a></li>
+          <!-- <li><a href="around-you.html">Around you</a></li> -->
         </ul>
         <div class="nav-wrapper">
-          <a href="index.html" class="left brand-logo hide-on-med-and-down">&nbspCabao 帶你出去玩</a>
+          <a href="index.html" class="left brand-logo hide-on-med-and-down">&nbspCabao 帶你出去玩-愛河</a>
           <a href="index.html" class="center brand-logo hide-on-large-only">Cabao 帶你出去玩</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse">
           <i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdown1">Cabao推薦旅遊</a></li>
             <li><a class="dropdown-button" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdown2">Services</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="mailto:cabao@cabao.com.tw">Contact</a></li>
             <li><a href="index.html" class="waves-effect waves-light btn yellow darken-2 grey-text text-darken-4 " >Home</a></li>
           </ul>
           <ul id="mobile-demo" class="side-nav">
             <li class="no-padding">
               <ul class="collapsible collapsible-accordion">
-                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Dropdown 1</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Cabao 推薦旅遊</a>
                   <div class="collapsible-body">
                     <ul>
-                      <li><a href="#">Link1</a></li>
-                      <li><a href="#">link2</a></li>
-                      <li><a href="#">link3</a></li>
+                      <li><a href="north.html">北部-宜蘭</a></li>
+                      <li><a href="mid.html">中部-南投</a></li>
+                      <li><a href="south.html">南部-高雄</a></li>
                     </ul>
                   </div>
                 </li>
-                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Dropdown 2</a>
+                <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Services</a>
                   <div class="collapsible-body">
                     <ul>
-                      <li><a href="#">link1</a></li>
-                      <li><a href="#">link2</a></li>
-                      <li><a href="#">link3</a></li>
+                      <li><a href="where-are-you.html">Where are you ? </a></li>
+                      <!-- <li><a href="around-you.html">Around you</a></li> -->
                     </ul>
                   </div>
                 </li>
 
-                <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Normal link 1</a></li>
-                <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Normal link 2</a></li>
+                <li class="bold"><a href="mailto:cabao@cabao.com.tw" class="waves-effect waves-teal">Contact</a></li>
+                <li class="bold"><a href="index.html" class="waves-effect waves-teal">Home</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </nav>
     </div>
+
+
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="images/s-1.jpg"></div>
+    </div>
+    <div class="section white">
+      <div class="row container parallax-container">
+        <h2 class="header hide-on-med-and-down">高雄好去處-愛河</h2>
+        <h4 class="header hide-on-large-only">高雄好去處-愛河</h4>
+        <div id="map" style="display:block"></div>
+        <div id="pano"></div>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="images/s-3.jpg"></div>
+    </div>
+
+    <div class="section white">
+      <div class="row container parallax-container">
+          <h3 class="header">看些影片吧！</h2>
+        <div class="tv">
+          <div class="video">
+            <object width="480" height="360">
+              <param name="movie" value="http://www.youtube.com/v/htCW5fcyLUU&amp;autoplay=0&amp;fs=1">
+              <param name="wmode" value="transparent">
+              <param name="allowfullscreen" value="true">
+              <embed type="application/x-shockwave-flash" src="http://www.youtube.com/v/htCW5fcyLUU&amp;autoplay=0&amp;fs=1" allowfullscreen="true" wmode="transparent" width="480" height="360"></object></div>
+          <ul class="playlist">
+            <li><a href="https://www.youtube.com/watch?v=6zUDShCkepI"></a></li>
+            <li><a href="https://www.youtube.com/watch?v=g5IM-HB4rwE"></a></li>
+            <li><a href="https://www.youtube.com/watch?v=tdp6ckh92dI"></a></li>
+            <li><a href="https://www.youtube.com/watch?v=0BM1VOwy_6M"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax"><img src="images/s-2.jpg"></div>
+    </div>
+
+
+
     <script>
       $(".button-collapse").sideNav();
     </script>
@@ -113,8 +225,8 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="white-text">Thanks for watching ! </h5>
+            <p class="grey-text text-lighten-4">We'll do our best to improve ! </p>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
